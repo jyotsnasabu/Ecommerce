@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Success</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .alert {
+            border-radius: 10px;
+        }
+        .alert-heading {
+            color: #198754;
+        }
+        .btn-primary {
+            background-color: #198754;
+            border-color: #198754;
+        }
+        .btn-primary:hover {
+            background-color: #146c43;
+            border-color: #146c43;
+        }
+        .btn-secondary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+        .btn-secondary:hover {
+            background-color: #0b5ed7;
+            border-color: #0b5ed7;
+        }
+        .btn-close {
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Thank you for your order!</h4>
+            <p>Your order has been successfully placed. Below are your order details:</p>
+            <hr>
+            <!-- Example dynamic order details -->
+            <p>Order Number: #123456</p>
+            
+           
+           
+            <hr>
+            
+            
+                <button type="submit" class="btn"><a href="{% url 'index' %}" >Close</a></button>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

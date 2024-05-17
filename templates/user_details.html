@@ -1,0 +1,40 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}User Details{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>User Details</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Contact No</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.user.username }}</td>
+                    <td>{{ user.user.email }}</td>
+                    <td>{{ user.address }}</td>
+                    <td>{{ user.number }}</td>
+                    <td><img src="{{ user.img.url }}" alt="{{ user.user.username }}" style="max-width: 100px;"></td>
+                    <td>
+                        <form action="{% url 'delete_user' user.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

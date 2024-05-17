@@ -1,0 +1,35 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}Product List{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Product List</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>{{ product.pname }}</td>
+                    <td>{{ product.pdesc }}</td>
+                    <td>{{ product.pprice }}</td>
+                    <td>{{ product.category.category_name }}</td>
+                    <td><img src="{{ product.pimg.url }}" alt="{{ product.pname }}" style="max-width: 100px;"></td>
+                    <td> <a href="{% url 'delete_product' product.id %}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
